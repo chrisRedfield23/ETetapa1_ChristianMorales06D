@@ -1,0 +1,90 @@
+body {
+    background-image: url(../img/fondoInicio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.formulario {
+    background: rgba(255, 255, 255, 0.363);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
+    color: white;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.514);
+    border-style: none;
+    transition: 0.5s ease-in;
+    outline: none;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    background: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: white;
+}
+
+.ingresar {
+    background: #222A3F;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700!important;
+    color: rgba(133, 133, 133, 0.747);
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+    transition: 0.5s ease-in;
+}
+
+.ingresar:hover {
+    color: white;
+}
+
+
+
+.olvide1 {
+    color: white;
+    text-decoration-style: none;
+    text-decoration-line: none;
+    font-size: 20px;
+    font-weight: 700!important;
+    /* border: 2px solid white; */
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(4, 50, 94, 0.644);
+}
+
+.olvide1:hover {
+    color: white;
+    text-decoration-style: none;
+    text-decoration-line: none;
+    cursor: pointer;
+}
+
+input:focus:user-invalid ~ .msj::after{
+    background: rgba(131, 15, 15, 0.884);
+    padding: 4px;
+    border-radius: 4px;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+input[type="text"]:focus:invalid ~ .msj::after{
+    content: 'Ingrese su datos(Obligatorio)';
+}
+input[type="email"]:focus:invalid ~ .msj::after{
+    content: 'Ingrese un email(Obligatorio "usuario@gmail.com")';
+}
+input[type="number"]:focus:invalid ~ .msj::after{
+    content: 'Ingrese su edad(Obligatorio)';
+}
+input[type="password"]:focus:invalid ~ .msj::after{
+    content: 'Ingrese su contraseña(Obligatorio)';
+}

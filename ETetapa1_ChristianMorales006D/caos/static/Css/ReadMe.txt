@@ -1,0 +1,1 @@
+estilos.css son los estilos de el inicio de sesion y registro
