@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="icon" type="image/png" href=" {% static 'img/logo.png'%}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'Css/APIsferiado.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Css/EstilosIndex.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+    crossorigin="anonymous">
+    
+    <title>Templates</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script>
+        $(document).ready(function(){
+            $('#icon').click(function(){
+                $('ul').toggleClass('show');
+            });
+        });
+        
+
+
+    </script>
+
+</head>
+<body>
+    <body background="{% static 'img/fondo_api.jpg'%}" style="background-repeat: no-repeat; background-attachment: fixed; background-size: cover;"  ></body>
+    <div class="navbar fixed-top">
+        <nav>
+            <label class="logo">Caos//News</label>
+            <ul>
+                <li><a class="active" href="{% url 'index'%}">Menú Principal</a></li>
+                <li><a href="{% url 'creaar'%}">Crear Colaborador</a></li>
+            </ul>
+            <label id="icon">
+                <i class="fas fa-bars"></i>
+            </label>
+        </nav>
+    </div>
+    <br>
+    <br>
+    <div class="row" style="color: white;">
+        <br>
+        <h1>Mostrando Usuarios</h1>
+        
+        <center><h3>Colaboradores</h3></center>
+            <table class="table" style="color: white;">
+                <thead>
+                <tr>
+                    <th scope="col">Rut</th>
+                    <th scope="col">foto</th>
+                    <th scope="col">Nombre </th>
+                    <th scope="col">apellido</th>
+                    <th scope="col">telefono</th>
+                    <th scope="col">dirección</th>
+                    <th scope="col">correo electrónico</th>
+                    <th scope="col">Pais</th>
+                    <th scope="col">Contrasena</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {%for ve in usuarios%}
+                    <tr>
+                        <td>{{ve.rut}}</td>
+                        <td>{{ve.foto}}</td>
+                        <td>{{ve.nombre}}</td>
+                        <td>{{ve.apellido}}</td>
+                        <td>{{ve.telefono}}</td>
+                        <td>{{ve.direccion}}</td>
+                        <td>{{ve.correo_electronico}}</td>
+                        <td>{{ve.pais}}</td>
+                        <td>{{ve.contrasena}}</td>
+                        <td ><a href="{% url 'modificar' ve.rut%}" class="modi">Modificar  </a></td>
+                        <td><a href="{% url 'eliminar' ve.rut%}" class="eli">Eliminar </a></td>
+                    </tr>
+                {%endfor%}
+    
+            </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+    </body>
+
+
+</html>

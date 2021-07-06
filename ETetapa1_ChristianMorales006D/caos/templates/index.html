@@ -2,6 +2,7 @@
 <html lang="es">
     <head>
         <title>Caos News</title>
+        <link rel="icon" type="image/png" href=" {% static 'img/logo.png'%}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% load static %}
@@ -32,7 +33,7 @@
     </head>
     <body>
         
-        <body background="{% static 'img/fondoInicio.jpg'%}" style="background-repeat: no-repeat; background-attachment: fixed; background-size: cover;"  ></body>
+        <body background="{% static 'img/drama.gif'%}" style="background-repeat: no-repeat; background-attachment: fixed; background-size: cover;"  ></body>
         <br>
         <br>
         <br>
@@ -43,8 +44,8 @@
             <nav>
                 <label class="logo">Caos//News</label>
                 <ul>
-                    <li><a class="active" href="{% url 'index'%}">Inicio Sesión</a></li>
-
+                    <li><a class="active" href="{% url 'ver'%}">Colectivos Registrados</a></li>
+                    <li><a class="active" href="{% url 'index'%}">Menú Principal</a></li>
                 </ul>
                 <label id="icon">
                     <i class="fas fa-bars"></i>
@@ -200,14 +201,7 @@
             </section>
             <script src="main.js"></script>
             
-        
-        
-        
-        
-        
-        
-        
-        
+    
         
             </div>
             <br>
